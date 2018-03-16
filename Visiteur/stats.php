@@ -50,7 +50,7 @@
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
 						<li><a href="index.php">Accueil</a></li>
-						<li class="active"><a href="stats.html">Statistiques</a></li>
+						<li class="active"><a href="stats.php">Statistiques</a></li>
 						<li><a href="connexion.html">Connectez-vous</a></li>
 					</ul>
 				</div>
@@ -84,7 +84,6 @@
 		<div class="gtco-container">
 			<div class="row">
 			    <div class="col-md-2 col-md-offset-1">
-						<img src="images/png/flag/063-japan.png" width="128px" height="128px" alt="Japon" style="margin-top: -50px;"><br>
 						<h2>'.recupEquipe($value["id_equipe1"]).'</h2>
 					</div>
 			    <div class="col-md-2"><h1>'.count(recupButeurs($value["id_equipe1"],$value["id_rencontre"])).'</h1></div>
@@ -96,7 +95,6 @@
 			     </div>
 			    <div class="col-md-2"><h1>'.count(recupButeurs($value["id_equipe2"],$value["id_rencontre"])).'</h1></div>
 			    <div class="col-md-2">
-						<img src="images/png/flag/158-egypt.png" width="128px" height="128px" alt="Japon" style="margin-top: -50px;"><br>
 						<h2>'.recupEquipe($value["id_equipe2"]).'</h2>
 					</div>
 			</div>
@@ -111,14 +109,14 @@
 		<div class="gtco-container">
 			<div class="row">
 			    <div class="col-md-2 col-md-offset-1">
-						<img src="images/png/flag/063-japan.png" width="128px" height="128px" alt="Japon" style="margin-top: -50px;"><br>
+						<!--<img src="images/png/flag/063-japan.png" width="128px" height="128px" alt="Japon" style="margin-top: -50px;"><br>-->
 						<h2>Japon</h2>
 					</div>
 			    <div class="col-md-2"><h1>3</h1></div>
 			    <div class="col-md-2"><em>&mdash;</em></div>
 			    <div class="col-md-2"><h1>2</h1></div>
 			    <div class="col-md-2">
-						<img src="images/png/flag/158-egypt.png" width="128px" height="128px" alt="Japon" style="margin-top: -50px;"><br>
+						<!--<img src="images/png/flag/158-egypt.png" width="128px" height="128px" alt="Japon" style="margin-top: -50px;"><br>-->
 						<h2>Egypte</h2>
 					</div>
 			</div>

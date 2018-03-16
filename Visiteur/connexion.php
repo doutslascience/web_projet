@@ -4,11 +4,11 @@ $mdp=$_POST['mdp'];
 $connect=mysqli_connect("127.0.0.1","root","") or die("");
 if($connect)
 {
-	mysqli_select_db($connect,"mabase") or die("");
-	$req="SELECT * from administrateur where pseudo='$pseudo'";
+	mysqli_select_db($connect,"bd") or die("");
+	$req="SELECT * from admin where id_admin='$pseudo'";
 	$query=mysqli_query($connect,$req) or die(mysqli_error());
 	$data=mysqli_fetch_assoc($query);
-	if ($data['mdp']==$mdp)
+	if ($data['mdp_admin']==$mdp)
 	{
 		session_start();
 		$_SESSION['pseudo']=$pseudo;

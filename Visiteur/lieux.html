@@ -39,6 +39,7 @@ session_start();
 if($_SESSION['pseudo'])
 {
 	$_SESSION['pseudo'];
+
 }
 else
 {
@@ -59,59 +60,37 @@ else
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
 						<li class="active"><a href="index.html"><Accueil></Accueil></a></li>
-						<li class="has-dropdown"><a href="lieux.html">Lieux</a></li>
-						<li class="has-dropdown"><a href="#">Rencontre</a></li>
-						<li><a href="#">Evenement</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
+						<li class="has-dropdown"><a href="lieux.php">Lieux</a></li>
+						<li class="has-dropdown"><a href="rencontre.php">Rencontre</a></li>
+						<li><a href="evenement.php">Evenement</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
 						<li style="color: green"><em><u><strong><?php echo $_SESSION['pseudo'];?></strong></u></em></li>&nbsp;
 						<li class="animate-box" data-animate-effect="fadeInUp"><a href="deconnexion.php" class="btn btn-white btn-lg btn-outline">Se Deconnecter</a></li>
 					</ul>
 				</div>
 			</div>
+			<form action="lieux.php" method="post">
+				<fieldset style="width: 50%">
+					<center ><h1 style="color: #ffffff">Inserer le Lieux</h1></center>
+					<label style="color: #ffffff">nom du stade</label>&nbsp;<input type="text" name="nom"><br><br>
+					<label style="color: #ffffff">nom de la ville</label>&nbsp;<input type="text" name="ville"><br><br>
+					<input type="submit" value="Inserer"><br><br>
+				</fieldset>
 
+			</form>
+			
 		</div>
 	</nav>
 
 	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/img_bg_1.jpg);">
 		<div class="overlay"></div>
+		
 	</header>
+
 	<div id="gtco-features-3">
 		<div class="gtco-container">
-			<div class="gtco-flex">
-				<div class="feature feature-1 animate-box" data-animate-effect="fadeInUp">
-					<div class="feature-inner">
-						<span class="icon">
-							<i class="ti-announcement"></i>
-						</span>
-						<h3>Lieux</h3>
-						<p>Vous aller mettre le lieux où se déroulera la rencontre</p>
-						<p><a href="#" class="btn btn-white btn-outline">inserer</a></p>
-					</div>
-				</div>
-				<div class="feature feature-2 animate-box" data-animate-effect="fadeInUp">
-					<div class="feature-inner">
-						<span class="icon">
-							<i class="ti-calendar"></i>
-						</span>
-						<h3>Résultat</h3>
-						<p>Vous pouvez entrer les informations concernant une rencontre et mettre à jour l'issue d'un match passé</p>
-						<p><a href="#" class="btn btn-white btn-outline">inserer</a></p>
-					</div>
-				</div>
-				<div class="feature feature-3 animate-box" data-animate-effect="fadeInUp">
-					<div class="feature-inner">
-						<span class="icon">
-							<i class="ti-timer"></i>
-						</span>
-						<h3>Evenement</h3>
-						<p>Ici vous mettrer les informations sur les evenements du match buts sanctions etc... </p>
-						<p><a href="#" class="btn btn-white btn-outline">inserer</a></p>
-					</div>
-
-				</div>
-			</div>
+			
 		</div>
 	</div>
-
 
 
 	<div class="gototop js-top">

@@ -1,7 +1,7 @@
 <?php
 	function connection()
 {
-	return new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', 'root');
+	return new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
 }
 
 
@@ -96,6 +96,46 @@
 	    return $req;
 	}
 
+function ajouterArbitre($nom_arbitre,$prenom_arbitre,$poste_arbitre){
+		$bdd1 = connection_arbitre();
+
+	    $result1=$bdd1->prepare("INSERT INTO `arbitre` (`nom_arbitre`, `prenom_arbitre`, `enum_poste`) VALUES (:nom1, :prenom1, :poste1)");
+	    $result1->execute(array(
+	    	'nom1'=>$nom_arbitre,
+	    	'prenom1'=>$prenom_arbitre,
+	    	'poste1'=>$poste_arbitre ));
+}
 
 
+function ajouterJoueur($nom,$prenom,$nationalite,$equipe){
+		$bdd = connection();
+
+	    $result=$bdd->prepare("INSERT INTO `joueur` (`nom_joueur`, `prenom_joueur`, `nationalite_joueur`, `id_equipe`) VALUES (:nom, :prenom, :nationalite,:equipe)");
+	    $result->execute(array(
+	    	'nom'=>$nom,
+	    	'prenom'=>$prenom,
+	    	'nationalite'=>$nationalite,
+	    	'equipe'=>$equipe
+	));
+	}
+
+function ajouterEntraineur($nom_entraineur,$prenom_entraineur){
+		$bdd2 = connection();
+
+	    $result2=$bdd2->prepare("INSERT INTO `entraineur` (`nom_entraineur`, `prenom_entraineur`) VALUES (:nom2, :prenom2 )");
+	    $result2->execute(array(
+	    	'nom2'=>$nom_entraineur,
+	    	'prenom2'=>$prenom_entraineur ));
+	    	
+}
+
+function ajouterLieux($nom_stade,$ville_stade){
+		$bdd2 = connection();
+
+	    $result2=$bdd2->prepare("INSERT INTO `stade` (`nom_stade`,`ville_stade`) VALUES (:nom_stade, :ville_stade )");
+	    $result2->execute(array(
+	    	'nom_stade'=>$nom_stade, 
+			'ville_stade'=>$ville_stade));
+	    	
+}
 ?>
