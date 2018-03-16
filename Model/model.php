@@ -6,10 +6,20 @@
 
 
 
-	function recupRencontres(){
+	function recupRencontresNonTermines(){
 		$bdd = connection();
 
-	    $result=$bdd->prepare("SELECT * from rencontre ");
+	    $result=$bdd->prepare("SELECT * from rencontre where termine LIKE'non'");
+	    $result->execute();
+	    $resultat=$result->fetchAll();
+
+	    return $resultat;
+	}
+
+		function recupRencontresTermines(){
+		$bdd = connection();
+
+	    $result=$bdd->prepare("SELECT * from rencontre where termine LIKE 'oui'");
 	    $result->execute();
 	    $resultat=$result->fetchAll();
 

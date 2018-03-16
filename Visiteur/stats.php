@@ -75,7 +75,7 @@
 		</div>
 	</header>
 
-	<?php $rencontres = recupRencontres(); 
+	<?php $rencontres = recupRencontresTermines(); 
 
 	foreach ($rencontres as $key => $value) {
 
