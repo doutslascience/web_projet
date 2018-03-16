@@ -1,5 +1,5 @@
 <!DOCTYPE HTML>
-
+<?php include'../Model/model.php'; ?>
 <html>
 	<head>
 	<meta charset="utf-8">
@@ -75,7 +75,39 @@
 		</div>
 	</header>
 
-	<div class="gtco-section border-bottom">
+	<?php $rencontres = recupRencontres(); 
+
+	foreach ($rencontres as $key => $value) {
+
+
+		echo '	<div class="gtco-section border-bottom">
+		<div class="gtco-container">
+			<div class="row">
+			    <div class="col-md-2 col-md-offset-1">
+						<img src="images/png/flag/063-japan.png" width="128px" height="128px" alt="Japon" style="margin-top: -50px;"><br>
+						<h2>'.recupEquipe($value["id_equipe1"]).'</h2>
+					</div>
+			    <div class="col-md-2"><h1>'.count(recupButeurs($value["id_equipe1"],$value["id_rencontre"])).'</h1></div>
+			    <div class="col-md-2"> 
+
+			        <a href="details.php?equipe1='.$value["id_equipe1"].'&equipe2='.$value["id_equipe2"].'&rencontre='.$value["id_rencontre"].'">
+						<button type="button" class="btn btn-primary">Details</button>
+                    </a>
+			     </div>
+			    <div class="col-md-2"><h1>'.count(recupButeurs($value["id_equipe2"],$value["id_rencontre"])).'</h1></div>
+			    <div class="col-md-2">
+						<img src="images/png/flag/158-egypt.png" width="128px" height="128px" alt="Japon" style="margin-top: -50px;"><br>
+						<h2>'.recupEquipe($value["id_equipe2"]).'</h2>
+					</div>
+			</div>
+		</div>
+	</div>';
+		# code...
+	}
+
+	?>
+
+	<div class="gtco-section border-bottom" >
 		<div class="gtco-container">
 			<div class="row">
 			    <div class="col-md-2 col-md-offset-1">

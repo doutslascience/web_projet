@@ -49,7 +49,7 @@
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
 						<li class="active"><a href="index.html"><Accueil></Accueil></a></li>
-						<li class="has-dropdown"><a href="stats.html">Statistiques</a></li>
+						<li class="has-dropdown"><a href="stats.php">Statistiques</a></li>
 						<li class="animate-box" data-animate-effect="fadeInUp"><a href="connexion.html" class="btn btn-white btn-lg btn-outline">Connectez-vous</a></li>
 					</ul>
 				</div>
