@@ -69,11 +69,11 @@ else
 					</ul>
 				</div>
 			</div>
-			<form action="lieux.php" method="post">
+			<form action="action/Actionlieux.php" method="post">
 				<fieldset style="width: 50%">
 					<center ><h1 style="color: #ffffff">Inserer le Lieux</h1></center>
-					<label style="color: #ffffff">nom du stade</label>&nbsp;<input type="text" name="nom"><br><br>
-					<label style="color: #ffffff">nom de la ville</label>&nbsp;<input type="text" name="ville"><br><br>
+					<label style="color: #ffffff">nom du stade</label>&nbsp;<input type="text" name="nom" placeholder="CAMPNOU"><br><br>
+					<label style="color: #ffffff">nom de la ville</label>&nbsp;<input type="text" name="ville" placeholder="MADRID"><br><br>
 					<input type="submit" value="Inserer"><br><br>
 				</fieldset>
 

@@ -31,12 +31,12 @@
 
 
 		$bdd = connection();
-	    $req=$bdd->prepare("select nom_equipe from equipe where id_equipe= :id ");
+	    $req=$bdd->prepare("select nom_equipe,flag from equipe where id_equipe= :id ");
 	    $req->execute(array(
 	    	'id'=>$idEquipe
 		)) ;
-		$req=$req->fetch();
-	    return $req["nom_equipe"];
+		$req=$req->fetchAll();
+	    return $req;
 	}
 
 		function recupButeurs($equipe, $rencontre){
@@ -137,5 +137,39 @@ function ajouterLieux($nom_stade,$ville_stade){
 	    	'nom_stade'=>$nom_stade, 
 			'ville_stade'=>$ville_stade));
 	    	
+}
+
+function ajouterEvenement($type,$joueur,$idrencontre,$minute){
+		$bdd2 = connection();
+
+	    $result2=$bdd2->prepare("INSERT INTO `evenement` (`type`,`id_joueur`,`id_rencontre`,`minute`) VALUES (:type, :id_joueur, :id_rencontre, :minute )");
+	    $result2->execute(array(
+	    	'type'=>$type, 
+			'id_joueur'=>$joueur,
+			'id_rencontre'=>$idrencontre,
+			'minute'=>$minute));
+}
+
+function ajouterRencontre($date,$heure,$idequipe1,$idequipe2,$idstade,$idphase,$termine){
+		$bdd2 = connection();
+
+	    $result2=$bdd2->prepare("INSERT INTO `rencontre` (`date_rencontre`,`heure_rencontre`,`id_equipe1`,`id_equipe2`,`id_stade`,`id_phase`,`termine`) VALUES (:dateR, :heure, :id_equipe1, :id_equipe2, :id_stade, :id_phase, :termine )");
+	    $result2->execute(array(
+	    	'dateR'=>$date, 
+			'heure'=>$heure,
+			'id_equipe1'=>$idequipe1,
+			'id_equipe2'=>$idequipe2, 
+			'id_stade'=>$idstade,
+			'id_phase'=>$idphase,
+			'termine'=>$termine));
+}
+
+function ajouterRencontreArbitre($idrencontre,$idarbitre){
+		$bdd2 = connection();
+
+	    $result2=$bdd2->prepare("INSERT INTO `rencontre_arbitre` (`id_rencontre`,`id_arbitre`) VALUES (:idrencontre, :idarbitre,)");
+	    $result2->execute(array(
+	    	'idrencontre'=>$idrencontre, 
+			'idarbitre'=>$idarbitre));
 }
 ?>

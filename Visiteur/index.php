@@ -98,7 +98,7 @@
 						</span>
 						<h3>Statistiques</h3>
 						<p>Vous pourrez voir les statistiques des matchs</p>
-						<p><a href="stats.html" class="btn btn-white btn-outline">Voir</a></p>
+						<p><a href="stats.php" class="btn btn-white btn-outline">Voir</a></p>
 					</div>
 				</div>
 				<!--

@@ -80,8 +80,11 @@
 		<div class="gtco-container">
 			<div class="row">
 			    <div class="col-md-2 col-md-offset-1">
-						<img src="images/png/flag/063-japan.png" width="128px" height="128px" alt="Japon" style="margin-top: -50px;"><br>
-						<h2><?php echo recupEquipe($_GET["equipe1"]);  ?></h2>
+			    	<?php $equipe=recupEquipe($_GET["equipe1"]);
+			    		foreach ($equipe as $key => $value) {
+			    	 ?>
+						<img src="images/flag/<?php echo $value["flag"]; ?>" width="128px" height="128px" alt="Japon" style="margin-top: -50px;"><br>
+						<h2><?php echo $value["nom_equipe"];  }?></h2>
 						<?php 
 							$buteurs= recupButeurs($_GET["equipe1"],$_GET["rencontre"]);
 							foreach ($buteurs as $key => $value) {
@@ -94,8 +97,11 @@
 			    <div class="col-md-2"> <?php echo recupPhaseRencontre($_GET["rencontre"]) ?></div>
 			    <div class="col-md-2"><h1><?php echo  count(recupButeurs($_GET["equipe2"],$_GET["rencontre"])); ?> </h1></div>
 			    <div class="col-md-2">
-						<img src="images/png/flag/158-egypt.png" width="128px" height="128px" alt="Japon" style="margin-top: -50px;"><br>
-						<h2><?php echo recupEquipe($_GET["equipe2"]);  ?></h2>
+						<?php $equipe=recupEquipe($_GET["equipe2"]);
+			    		foreach ($equipe as $key => $value) {
+			    	 ?>
+						<img src="images/flag/<?php echo $value["flag"]; ?>" width="128px" height="128px" alt="Japon" style="margin-top: -50px;"><br>
+						<h2><?php echo $value["nom_equipe"];  }?></h2>
 												<?php 
 						$buteurs= recupButeurs($_GET["equipe2"],$_GET["rencontre"]);
 						foreach ($buteurs as $key => $value) {
