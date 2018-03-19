@@ -1,7 +1,7 @@
 <?php
 	function connection()
 {
-	return new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
+	return new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', 'root');
 }
 
 
