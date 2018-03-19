@@ -53,7 +53,7 @@ else
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="index.php">FIFA <em>&mdash;</em> World Cup 2018 <em>.</em></a></div>
+					<div id="gtco-logo"><a href="accueil.php.php">FIFA <em>&mdash;</em> World Cup 2018 <em>.</em></a></div>
 				</div>
 
 				<div class="col-xs-8 text-right menu-1">
@@ -84,7 +84,7 @@ else
 						</span>
 						<h3>Lieux</h3>
 						<p>Vous aller mettre le lieux où se déroulera la rencontre</p>
-						<p><a href="#" class="btn btn-white btn-outline">inserer</a></p>
+						<p><a href="lieux.php" class="btn btn-white btn-outline">inserer</a></p>
 					</div>
 				</div>
 				<div class="feature feature-2 animate-box" data-animate-effect="fadeInUp">
@@ -94,7 +94,7 @@ else
 						</span>
 						<h3>Résultat</h3>
 						<p>Vous pouvez entrer les informations concernant une rencontre et mettre à jour l'issue d'un match passé</p>
-						<p><a href="#" class="btn btn-white btn-outline">inserer</a></p>
+						<p><a href="rencontre.php" class="btn btn-white btn-outline">inserer</a></p>
 					</div>
 				</div>
 				<div class="feature feature-3 animate-box" data-animate-effect="fadeInUp">
@@ -104,7 +104,7 @@ else
 						</span>
 						<h3>Evenement</h3>
 						<p>Ici vous mettrer les informations sur les evenements du match buts sanctions etc... </p>
-						<p><a href="#" class="btn btn-white btn-outline">inserer</a></p>
+						<p><a href="evenement.php" class="btn btn-white btn-outline">inserer</a></p>
 					</div>
 
 				</div>

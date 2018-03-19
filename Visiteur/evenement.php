@@ -54,12 +54,12 @@ else
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="index.php">FIFA <em>&mdash;</em> World Cup 2018 <em>.</em></a></div>
+					<div id="gtco-logo"><a href="accueil.php">FIFA <em>&mdash;</em> World Cup 2018 <em>.</em></a></div>
 				</div>
 
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
-						<li class="active"><a href="index.html"><Accueil></Accueil></a></li>
+						<li class="active"><a href="accueil.php"><Accueil>Accueil</Accueil></a></li>
 						<li class="has-dropdown"><a href="lieux.php">Lieux</a></li>
 						<li class="has-dropdown"><a href="rencontre.php">Rencontre</a></li>
 						<li><a href="evenement.php">Evenement</a></li>&nbsp;&nbsp;&nbsp;&nbsp;

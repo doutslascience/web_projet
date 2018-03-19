@@ -51,7 +51,7 @@
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
 						<li><a href="index.php">Accueil</a></li>
-						<li class="active"><a href="stats.html">Statistiques</a></li>
+						<li class="active"><a href="stats.php">Statistiques</a></li>
 						<li><a href="connexion.html">Connectez-vous</a></li>
 					</ul>
 				</div>
