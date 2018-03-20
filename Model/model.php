@@ -1,10 +1,58 @@
 <?php
 	function connection()
 {
-	return new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', 'root');
+	return new PDO('mysql:host=localhost;dbname=bd;charset=utf8', 'root', '');
 }
 
 
+	function recupArbitreCentral(){
+		$bdd = connection();
+
+	    $result=$bdd->prepare("SELECT * from arbitre where enum_poste LIKE'central'");
+	    $result->execute();
+	    $resultat=$result->fetchAll();
+
+	    return $resultat;
+	}
+
+	function recupArbitreAssistant(){
+		$bdd = connection();
+
+	    $result=$bdd->prepare("SELECT * from arbitre where enum_poste LIKE'assistant'");
+	    $result->execute();
+	    $resultat=$result->fetchAll();
+
+	    return $resultat;
+	}
+
+		function recupEquipes(){
+		$bdd = connection();
+
+	    $result=$bdd->prepare("SELECT * from equipe");
+	    $result->execute();
+	    $resultat=$result->fetchAll();
+
+	    return $resultat;
+	}
+		function recupStades(){
+		$bdd = connection();
+
+	    $result=$bdd->prepare("SELECT * from stade");
+	    $result->execute();
+	    $resultat=$result->fetchAll();
+
+	    return $resultat;
+	}
+
+			function recupPhases(){
+		$bdd = connection();
+
+	    $result=$bdd->prepare("SELECT * from phase");
+	    $result->execute();
+	    $resultat=$result->fetchAll();
+
+	    return $resultat;
+	}
 
 	function recupRencontresNonTermines(){
 		$bdd = connection();
@@ -24,6 +72,16 @@
 	    $resultat=$result->fetchAll();
 
 	    return $resultat;
+	}
+
+	function recupDernierRencontre(){
+
+
+	    $bdd = connection();
+	    $req=$bdd->prepare("select id_rencontre from rencontre where id_rencontre >= ALL (select id_rencontre from rencontre)");
+	    $req->execute(array()) ;
+		$req=$req->fetch();
+	    return $req;
 	}
 
 
@@ -164,12 +222,25 @@ function ajouterRencontre($date,$heure,$idequipe1,$idequipe2,$idstade,$idphase,$
 			'termine'=>$termine));
 }
 
-function ajouterRencontreArbitre($idrencontre,$idarbitre){
+function creerRencontre($date,$heure,$idequipe1,$idequipe2,$idstade,$idphase){
 		$bdd2 = connection();
 
-	    $result2=$bdd2->prepare("INSERT INTO `rencontre_arbitre` (`id_rencontre`,`id_arbitre`) VALUES (:idrencontre, :idarbitre,)");
+	    $result2=$bdd2->prepare("INSERT INTO `rencontre` (`date_rencontre`,`heure_rencontre`,`id_equipe1`,`id_equipe2`,`id_stade`,`id_phase`) VALUES (:dateR, :heure, :id_equipe1, :id_equipe2, :id_stade, :id_phase )");
 	    $result2->execute(array(
-	    	'idrencontre'=>$idrencontre, 
-			'idarbitre'=>$idarbitre));
+	    	'dateR'=>$date, 
+			'heure'=>$heure,
+			'id_equipe1'=>$idequipe1,
+			'id_equipe2'=>$idequipe2, 
+			'id_stade'=>$idstade,
+			'id_phase'=>$idphase));
+}
+
+function ajouterRencontreArbitre($rencontre,$arbitre){
+		$bdd2 = connection();
+
+	    $result2=$bdd2->prepare("INSERT INTO `rencontre_arbitre` (`id_rencontre`,`id_arbitre`) VALUES (:rencontre, :arbitre )");
+	    $result2->execute(array(
+	    	'rencontre'=>$rencontre, 
+			'arbitre'=>$arbitre));
 }
 ?>
