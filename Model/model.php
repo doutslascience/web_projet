@@ -34,6 +34,38 @@
 
 	    return $resultat;
 	}
+
+	function recupJoueurs(){
+		$bdd = connection();
+
+	    $result=$bdd->prepare("SELECT * from joueur ");
+	    $result->execute();
+	    $resultat=$result->fetchAll();
+
+	    return $resultat;
+	}
+
+	/*function recupJoueurs($idequipe){
+		$bdd = connection();
+
+	    $result=$bdd->prepare("SELECT * from joueur where id_equipe=: id");
+	    $result->execute(array('id'=>$idequipe));
+	    $resultat=$result->fetchAll();
+
+	    return $resultat;
+	}
+	*/
+
+	function recupRencontres(){
+		$bdd = connection();
+
+	    $result=$bdd->prepare("SELECT * from rencontre");
+	    $result->execute();
+	    $resultat=$result->fetchAll();
+
+	    return $resultat;
+	}
+
 		function recupStades(){
 		$bdd = connection();
 
@@ -97,6 +129,18 @@
 	    return $req;
 	}
 
+	function recupNomEquipe($idEquipe){
+
+
+		$bdd = connection();
+	    $req=$bdd->prepare("select nom_equipe from equipe where id_equipe= :id ");
+	    $req->execute(array(
+	    	'id'=>$idEquipe
+		)) ;
+		$req=$req->fetch();
+	    return $req['nom_equipe'];
+	}
+
 		function recupButeurs($equipe, $rencontre){
 
 
@@ -111,7 +155,6 @@
 
 	    return $req;
 	}
-
 
 	function getEventsParEquipe($type, $idEquipe,$rencontre){
 

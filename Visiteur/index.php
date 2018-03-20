@@ -3,7 +3,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FIFA &mdash; World Cup 2018</title>
+	<title>UEFA &mdash; Champions League</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 
 	<!-- <link href="https://fonts.googleapis.com/css?family=Droid+Sans" rel="stylesheet"> -->
@@ -44,7 +44,7 @@
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="index.php">FIFA <em>&mdash;</em> World Cup 2018 <em>.</em></a></div>
+					<div id="gtco-logo"><a href="index.php">UEFA <em>&mdash;</em>Champions League <em>.</em></a></div>
 				</div>
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
@@ -65,6 +65,15 @@
 				<div class="col-md-12 col-md-offset-0 text-left">
 					<div class="display-t">
 						<div class="display-tc">
+							<div style="border: solid 2px; border-radius: 2px;">
+								<div style="border: solid 1px; display: inline-block;">
+									<img src="images/photo_football/atletico1.png" width='150' height='120'>
+									<img src="images/photo_football/atletico2.png" width='150' height='120'>
+									<img src="images/photo_football/barca1.png" width='150' height='120'> 
+									<img src="images/photo_football/barca2.png" width='150' height='120'>
+								</div>
+							</div>
+
 							<p>
 								<font color="#ffffff">
 								<h3>Ecrire quelque chose qui fera office de test</h3>

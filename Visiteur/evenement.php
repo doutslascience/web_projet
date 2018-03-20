@@ -1,10 +1,10 @@
-
+<?php include'../Model/model.php'; ?>
 <!DOCTYPE HTML>
 <html>
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FIFA &mdash; World Cup 2018</title>
+	<title>UEFA &mdash; Champions League</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -45,7 +45,8 @@ else
 {
 	header('location:index.php');
 } */
-
+	$joueur=recupJoueurs();
+	$rencontre=recupRencontres();
  ?>
 	<div class="gtco-loader"></div>
 
@@ -54,14 +55,14 @@ else
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="accueil.php">FIFA <em>&mdash;</em> World Cup 2018 <em>.</em></a></div>
+					<div id="gtco-logo"><a href="accueil.php">UEFA <em>&mdash;</em>Champions League <em>.</em></a></div>
 				</div>
 
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
 						<li class="active"><a href="accueil.php"><Accueil>Accueil</Accueil></a></li>
 						<li class="has-dropdown"><a href="lieux.php">Lieux</a></li>
-						<li class="has-dropdown"><a href="rencontre.php">Rencontre</a></li>
+						<li class="has-dropdown"><a href="rencontres.php">Rencontre</a></li>
 						<li><a href="evenement.php">Evenement</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
 						<li style="color: green"><em><u><strong><?php // echo $_SESSION['pseudo'];
 							?> Nom d'utilisateur</strong></u></em></li>&nbsp;
@@ -69,19 +70,76 @@ else
 					</ul>
 				</div>
 			</div>
-			<form action="action/Actionevenement.php" method="post">
-				<fieldset style="width: 50%">
-					<center ><h1 style="color: #ffffff">Inserer un evenement</h1></center>
-					<label style="color: #ffffff">Type</label>&nbsp;<input type="text" name="type" placeholder="But,Carton jaune,Carton rouge"><br><br>
-					<label style="color: #ffffff">Joueur</label>&nbsp;<input type="number" name="joueur" placeholder="id joueur"><br><br>
-					<label style="color: #ffffff">Rencontre</label>&nbsp;<input type="number" name="rencontre" placeholder="id rencontre"><br><br>
-					<label style="color: #ffffff">Minute</label>&nbsp;<input type="number" name="minute" placeholder="temps"><br><br>
-					<input type="submit" value="Inserer"><br><br>
-				</fieldset>
+			<div class="row">
+				<!-- Debut /.row -->
+                <div class="col-lg-5 col-lg-offset-3">
+                    <div class="panel panel-default">
+                    	<!-- Debut /.panel -->
+                        <div class="panel-heading">
+                        <!-- Debut /.panel-heading -->
+                            NOUVEAU EVENEMENT
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                        	<!-- Debut /.panel-body -->
+                                <div class="col-lg-12">
+                                		<!--Debut du formulaire d'ajout de evenement-->
+                                		<div class="form-group input-group col-lg-12">
+                                            <span >Rencontre</span>
+                                            <form action="evenement.php" method="post">
+                                            	<!-- <Utiliser la methode change de jquery  -->
+                                            		<div class="form-group input-group col-lg-12">
+                                            <select class="form-control" required name="rencontre">
+                                                 <option value="Rencontre" disabled selected>Rencontre</option>
+                                                <?php
 
-			</form>
-			
+                                                 foreach ($rencontre as $key => $value) {
+                                                     echo '<option value="'.$value["id_rencontre"].'">'.recupNomEquipe($value["id_equipe1"]).' VS '.recupNomEquipe($value["id_equipe2"]).'</option>';
+                                                 }
+                                                ?>
+                                            </select>
+                                            		</div>
+                                            <button type="submit" class="btn btn-info">Valider</button>
+                                            </form>
+                                        </div>
+
+										<form action="action/Actionevenement.php" method="post">
+											<fieldset >
+												<span>Type d'evenement</span>
+												<div class="form-group input-group col-lg-12">
+													<span class="input-group-addon"><i class="fa fa-calendar fa-faw"></i></span>
+													<input type="text" class="form-control" name="type" placeholder="But,Carton jaune,Carton rouge">
+												</div>
+
+										<div class="form-group input-group col-lg-12">
+                                            <span >Joueur</span>
+                                            <select class="form-control" required name="joueur">
+                                                 <option value="joueur" disabled selected>Nom du joueur</option>
+                                                <?php
+                                                 foreach ($joueur as $key => $value) {
+                                                     echo '<option value="'.$value["id_joueur"].'">'.$value["nom_joueur"].'</option>';
+                                                 }
+                                                ?>
+                                            </select>
+                                            
+                                        </div>
+                                        	<span>Minutes</span>
+                                        	<div class="form-group input-group col-lg-12">
+												<span class="input-group-addon"><i class="fa fa-calendar fa-faw"></i></span>
+												<input type="number" class="form-control" name="minute" placeholder="temps">
+											</div>
+												<button type="submit" class="btn btn-info">Créer</button>
+											</fieldset>
+
+										</form>
+										<!--Fin du formulaire d'ajout de evenement-->
+								</div>
+						</div>
+						<!-- /.panel-body -->
+					</div>	
+					<!-- /.panel -->						
 		</div>
+		<!-- /.row -->
 	</nav>
 
 	<header id="gtco-header" class="gtco-cover" role="banner" style="background-image:url(images/img_bg_1.jpg);">

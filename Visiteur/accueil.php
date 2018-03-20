@@ -4,7 +4,7 @@
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>FIFA &mdash; World Cup 2018</title>
+	<title>UEFA &mdash; Champions League</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
@@ -53,14 +53,14 @@ else
 		<div class="gtco-container">
 			<div class="row">
 				<div class="col-sm-4 col-xs-12">
-					<div id="gtco-logo"><a href="accueil.php.php">FIFA <em>&mdash;</em> World Cup 2018 <em>.</em></a></div>
+					<div id="gtco-logo"><a href="accueil.php">UEFA <em>&mdash;</em>Champions League <em>.</em></a></div>
 				</div>
 
 				<div class="col-xs-8 text-right menu-1">
 					<ul>
 						<li class="active"><a href="index.html"><Accueil></Accueil></a></li>
 						<li class="has-dropdown"><a href="lieux.php">Lieux</a></li>
-						<li class="has-dropdown"><a href="rencontre.php">Rencontre</a></li>
+						<li class="has-dropdown"><a href="rencontres.php">Rencontre</a></li>
 						<li><a href="evenement.php">Evenement</a></li>&nbsp;&nbsp;&nbsp;&nbsp;
 						<li style="color: green"><em><u><strong><?php echo $_SESSION['pseudo'];?></strong></u></em></li>&nbsp;
 						<li class="animate-box" data-animate-effect="fadeInUp"><a href="deconnexion.php" class="btn btn-white btn-lg btn-outline">Se Deconnecter</a></li>
@@ -94,7 +94,7 @@ else
 						</span>
 						<h3>Résultat</h3>
 						<p>Vous pouvez entrer les informations concernant une rencontre et mettre à jour l'issue d'un match passé</p>
-						<p><a href="rencontre.php" class="btn btn-white btn-outline">inserer</a></p>
+						<p><a href="rencontres.php" class="btn btn-white btn-outline">inserer</a></p>
 					</div>
 				</div>
 				<div class="feature feature-3 animate-box" data-animate-effect="fadeInUp">
