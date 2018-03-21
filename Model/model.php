@@ -183,6 +183,19 @@
 	    return $req["enum_phase"];
 	}
 
+		function recupJoueurByNumero($numero, $equipe){
+
+
+	    $bdd = connection();
+	    $req=$bdd->prepare("select id_joueur from joueur where id_equipe = :equipe and numero = :numero ");
+	    $req->execute(array(
+	    	'equipe'=>$equipe,
+	    	'numero'=>$numero
+		)) ;
+		$req=$req->fetch();
+	    return $req["id_joueur"];
+	}
+
 
 		function recupArbitres($rencontre){
 
@@ -198,13 +211,23 @@
 	}
 
 function ajouterArbitre($nom_arbitre,$prenom_arbitre,$poste_arbitre){
-		$bdd1 = connection_arbitre();
+		$bdd1 = connection();
 
 	    $result1=$bdd1->prepare("INSERT INTO `arbitre` (`nom_arbitre`, `prenom_arbitre`, `enum_poste`) VALUES (:nom1, :prenom1, :poste1)");
 	    $result1->execute(array(
 	    	'nom1'=>$nom_arbitre,
 	    	'prenom1'=>$prenom_arbitre,
 	    	'poste1'=>$poste_arbitre ));
+}
+
+
+function ajouterRencontreJoueur($joueur,$rencontre){
+		$bdd1 = connection();
+
+	    $result1=$bdd1->prepare("INSERT INTO `rencontre_joueur` (`id_joueur`, `id_rencontre`) VALUES (:joueur, :rencontre)");
+	    $result1->execute(array(
+	    	'joueur'=>$joueur,
+	    	'rencontre'=>$rencontre));
 }
 
 
@@ -285,5 +308,13 @@ function ajouterRencontreArbitre($rencontre,$arbitre){
 	    $result2->execute(array(
 	    	'rencontre'=>$rencontre, 
 			'arbitre'=>$arbitre));
+}
+
+function terminerRencontre($rencontre){
+		$bdd=connection();
+
+		 $result2=$bdd->prepare("UPDATE `rencontre` SET `termine` = 'oui' WHERE `rencontre`.`id_rencontre` = :rencontre");
+	    $result2->execute(array(
+	    	'rencontre'=>$rencontre));
 }
 ?>
